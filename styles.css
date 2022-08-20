@@ -11,25 +11,31 @@ body {
   width: 90%;
   display: flex;
   flex-direction: column;
+  
 }
 #numberSelection, #arithmetic {
   font-size: 1.0rem;
 }
 
 #mainContainer {
-  border: 2px solid white;
+ border: 2px solid rgba(255, 255, 255, 0.24);
+  border-left: none;
+  border-top: none;
   width: 25%;
   height: 80%;
   margin: 0 auto;
   border-radius: 10px;
-  background-color: rgb(105, 163, 163);
+  background-color: rgba(106, 126, 126, 0.226);
+  box-shadow: 2px 3px 25px 0
+            rgba(0, 0, 0, .25);          
+  box-shadow: -1px  0px 5px rgba(0, 0, 0, 0.432);           
  
  
  
 }
 
 #output, #displayEntry{
-  border-bottom: 1px solid lightgrey;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.356);
   width: 100%;
  
 }
@@ -37,22 +43,38 @@ body {
 #container2 {
   display: flex;
   flex-direction: row;
-  
+  padding: 10px;
+  justify-content: space-between;
 }
 
 
 #output>h2 {
   font-size: 1.5rem;
-  height: 45px;
+  height: 100%;
   text-align: right;
   padding-right: 10px;
   margin-bottom: 17px;
+  margin: 0;
+
 }
+#output {
+  height: 60px;
+
+}
+
+#displayEntry {
+  height: 45px;
+  padding-top: 2px;
+
+}
+
+
 #displayEntry>h3 {
   font-size: .8rem;
-  height: 10px;
+  height: 100%;
   text-align: right;
   padding-right: 10px;
+  margin: 0;
 }
 #numberSelection {
   display: flex;
@@ -60,8 +82,9 @@ body {
   height: 25%;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: center;
+  padding-right: 5px;
   align-content: center;
+  justify-content: space-between;
  
 }
 
@@ -69,30 +92,41 @@ body {
   display: flex;
   height: 25%;
   width: 100%;
+  justify-content: space-between;
   
 }
 
 #seven, #eight, #nine, #four, #five, #six, #one, #two, #three, #decimal{
   height: 80px;
-  width: 142.5px;
-  border: 1px solid lightgrey;
+  width: 30%;
+  border: 2px solid rgba(255, 255, 255, 0.24);
+  border-left: none;
+  border-top: none;
   display: flex;
   justify-content: center;
   border-radius: 10px;
   align-items: center;
   font-weight: 700;
+  background-color: rgba(75, 144, 207, 0.253);
+  box-shadow: -1px  0px 2px rgba(0, 0, 0, 0.432);
 }
 
 #zero {
   height: 80px;
-  width: 289px;
-  border: 1px solid lightgrey;
+  width: 65%;
+  border: 2px solid rgba(255, 255, 255, 0.24);
+  border-left: none;
+  border-top: none;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
   font-weight: 700;
+  background-color: rgba(75, 144, 207, 0.253);
+  box-shadow: -1px  0px 2px rgba(0, 0, 0, 0.432);
 }
+
+
 
 #arithmetic {
   width: 30%;
@@ -108,12 +142,16 @@ body {
 #clear, #division, #mult, #subtract, #addition, #equal {
   height: 52.7px;
   width: 100%;
-  border: 1px solid lightgrey;
+  border: 2px solid rgba(255, 255, 255, 0.24);
+  border-left: none;
+  border-top: none;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
   font-weight: 700;
+  background-color: rgba(75, 144, 207, 0.253);
+  box-shadow: -1px  0px 2px rgba(0, 0, 0, 0.432);
 }
 
 
