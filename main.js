@@ -1,66 +1,105 @@
-document.querySelector('#seven').addEventListener('click', getSeven)
-document.querySelector('#eight').addEventListener('click', getEight)
-document.querySelector('#nine').addEventListener('click', getNine)
-document.querySelector('#four').addEventListener('click', getFour)
-document.querySelector('#five').addEventListener('click', getFive)
-document.querySelector('#six').addEventListener('click', getSix)
-document.querySelector('#one').addEventListener('click', getOne)
-document.querySelector('#two').addEventListener('click', getTwo)
-document.querySelector('#three').addEventListener('click', getThree)
-document.querySelector('#zero').addEventListener('click', getZero)
-document.querySelector('#decimal').addEventListener('click', getDecimal)
+let keys = document.querySelector('#container2')
+let displayEqua = document.querySelector('#displayEquation')
+let display1 = document.querySelector('h2')
 
-function getSeven() {
-  let seven = 7 
-  document.querySelector('#displayEquation').innerText = seven
-}
+keys.addEventListener('click', event => {
+  if(!event.target.closest('div')) return
+  
+  const key = event.target
+  const keyValue = key.textContent
+  const displayValue = displayEqua.textContent
 
-function getEight() {
-  let eight = 8
-  document.querySelector('#displayEquation').innerText = eight
-}
+  if (displayValue == '0') {
+    displayEqua.textContent = keyValue
+  } else {
+    displayEqua.textContent = displayValue + keyValue
+  }
+})
 
-function getNine() {
-  let nine = 9
-  document.querySelector('#displayEquation').innerText = nine
-}
 
-function getFour() {
-  let four = 4
-  document.querySelector('#displayEquation').innerText = four
-}
 
-function getFive() {
-  let five = 5
-  document.querySelector('#displayEquation').innerText = five
-}
 
-function getSix() {
-  let six = 6
-  document.querySelector('#displayEquation').innerText = six
-}
 
-function getOne() {
-  let one = 1
-  document.querySelector('#displayEquation').innerText = one
-}
+// document.querySelector('#eight').addEventListener('click', getEight)
+// document.querySelector('#nine').addEventListener('click', getNine)
+// document.querySelector('#four').addEventListener('click', getFour)
+// document.querySelector('#five').addEventListener('click', getFive)
+// document.querySelector('#six').addEventListener('click', getSix)
+// document.querySelector('#one').addEventListener('click', getOne)
+// document.querySelector('#two').addEventListener('click', getTwo)
+// document.querySelector('#three').addEventListener('click', getThree)
+// document.querySelector('#zero').addEventListener('click', getZero)
+// document.querySelector('#decimal').addEventListener('click', getDecimal)
 
-function getTwo() {
-  let two = 2
-  document.querySelector('#displayEquation').innerText = two
-}
 
-function getThree() {
-  let three = 3
-  document.querySelector('#displayEquation').innerText = three
-}
 
-function getZero() {
-  let zero = 0
-  document.querySelector('#displayEquation').innerText = zero
-}
+// function getEight() {
+//   let firstKey = 8
+//   document.querySelector('#displayEquation').innerText = firstKey
+// }
 
-function getDecimal() {
-  let decimal = '.'
-  document.querySelector('#displayEquation').innerText = decimal
-}
+// function getNine() {
+//   let firstKey = 9
+//   document.querySelector('#displayEquation').innerText = firstKey
+// }
+
+// function getFour() {
+//   let firstKey = 4
+//   document.querySelector('#displayEquation').innerText = firstKey
+// }
+// firstKey
+// function getFive() {
+//   let firstKey = 5
+//   document.querySelector('#displayEquation').innerText = firstKey
+// }
+
+// function getSix() {
+//   let firstKey = 6
+//   document.querySelector('#displayEquation').innerText = firstKey
+// }
+
+// function getOne() {
+//   let firstKey = 1
+//   document.querySelector('#displayEquation').innerText = firstKey
+// }
+
+// function getTwo() {
+//   let firstKey = 2
+//   document.querySelector('#displayEquation').innerText = firstKey
+// }
+
+// function getThree() {
+//   let firstKey = 3
+//   document.querySelector('#displayEquation').innerText = firstKey
+// }
+
+// function getZero() {
+//   let firstKey = 0
+//   document.querySelector('#displayEquation').innerText = firstKey
+// }
+
+// function getDecimal() {
+//   let firstKey = '.'
+//   document.querySelector('#displayEquation').innerText = firstKey
+// }
+
+
+
+
+// let display = document.querySelector('#displayEquation').innerText.value
+
+
+// document.querySelector('.key').addEventListener('click', getDisplay)
+
+// function getDisplay() {
+//   let keyEntry = document.querySelector('.key').innerText.value
+
+//   document.querySelector('#displayEquation').innerText = keyEntry
+//   console.log(keyEntry)
+// }
+
+// if (keyEntry >= 0) {
+//   keyEntry2 = keyEntry + "";
+// } else {
+
+// }
