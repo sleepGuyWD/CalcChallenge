@@ -56,7 +56,7 @@ body {
  
   margin-bottom: 17px;
   margin: 0;
-
+  overflow: hidden;
 }
 #output {
   height: 60px;
