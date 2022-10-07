@@ -1,105 +1,113 @@
-let keys = document.querySelector('#container2')
-let displayEqua = document.querySelector('#displayEquation')
-let display1 = document.querySelector('h2')
+const prevDisplayTextElement = document.querySelector('#output')
+const currrentDisplayTextElement = document.querySelector('#displayEquation')
 
-keys.addEventListener('click', event => {
-  if(!event.target.closest('div')) return
-  
-  const key = event.target
-  const keyValue = key.textContent
-  const displayValue = displayEqua.textContent
 
-  if (displayValue == '0') {
-    displayEqua.textContent = keyValue
-  } else {
-    displayEqua.textContent = displayValue + keyValue
+class Calculator  {
+  constructor(prevDisplayTextElement, currrentDisplayTextElement) {
+    this.prevDisplayTextElement = prevDisplayTextElement
+    this.currrentDisplayTextElement = currrentDisplayTextElement
+    this.clearAll()
   }
-})
+
+  parseInput(innerText) {
+    switch (innerText) {
+      case '=':
+       this.compute(this.currentOperand)
+        break
+      case 'C':
+        this.clearAll()
+        break
+      case '.':
+        if(this.currentOperand == 0) {
+          this.addText('0.')
+         
+        } else {
+          this.addText(innerText)
+        }
+        break
+      default: 
+      this.addText(innerText)
+    }
+  }
+
+  addText(innerText) {
+    if (this.currentOperand === '0') {
+      this.currentOperand = ''
+    } else if (this.prevOperand != null) {
+        this.currentOperand = this.prevOperand
+        this.prevOperand = null
+    }
+    if (isNaN(+(innerText)) && isNaN(+(this.currentOperand))) {
+      if (isNaN(this.currentOperand.slice(-1))) {
+        return
+      }
+    }
+     this.currentOperand += innerText
+     document.querySelector('#output').innerText = ''
+  }
+
+  outputText(text) {
+    document.querySelector('#output').innerText = text
+  }
+
+  clearAll() {
+    this.currentOperand = '0'
+    this.prevOperand = null
+    document.querySelector('#output').innerText = ''
+  }
+
+  updateDisplay() {
+    this.currrentDisplayTextElement.innerText = this.currentOperand
+    
+  }
+
+  compute(equation) {
+    let result = Function("return " + equation) ()
+    this.outputText(result)
+    this.currentOperand = ''
+  }
+}
+
+const calculator = new Calculator(prevDisplayTextElement, currrentDisplayTextElement)
+
+const keys = document.querySelector('#container2')
+  keys.addEventListener('click', event => {
+    const {target} = event
+    const {innerText} = target
+    if (!target.matches('.key')) {
+      return
+    } else {    
+      calculator.parseInput(innerText)
+      calculator.updateDisplay()
+    }
+  })
 
 
 
 
 
-// document.querySelector('#eight').addEventListener('click', getEight)
-// document.querySelector('#nine').addEventListener('click', getNine)
-// document.querySelector('#four').addEventListener('click', getFour)
-// document.querySelector('#five').addEventListener('click', getFive)
-// document.querySelector('#six').addEventListener('click', getSix)
-// document.querySelector('#one').addEventListener('click', getOne)
-// document.querySelector('#two').addEventListener('click', getTwo)
-// document.querySelector('#three').addEventListener('click', getThree)
-// document.querySelector('#zero').addEventListener('click', getZero)
-// document.querySelector('#decimal').addEventListener('click', getDecimal)
-
-
-
-// function getEight() {
-//   let firstKey = 8
-//   document.querySelector('#displayEquation').innerText = firstKey
-// }
-
-// function getNine() {
-//   let firstKey = 9
-//   document.querySelector('#displayEquation').innerText = firstKey
-// }
-
-// function getFour() {
-//   let firstKey = 4
-//   document.querySelector('#displayEquation').innerText = firstKey
-// }
-// firstKey
-// function getFive() {
-//   let firstKey = 5
-//   document.querySelector('#displayEquation').innerText = firstKey
-// }
-
-// function getSix() {
-//   let firstKey = 6
-//   document.querySelector('#displayEquation').innerText = firstKey
-// }
-
-// function getOne() {
-//   let firstKey = 1
-//   document.querySelector('#displayEquation').innerText = firstKey
-// }
-
-// function getTwo() {
-//   let firstKey = 2
-//   document.querySelector('#displayEquation').innerText = firstKey
-// }
-
-// function getThree() {
-//   let firstKey = 3
-//   document.querySelector('#displayEquation').innerText = firstKey
-// }
-
-// function getZero() {
-//   let firstKey = 0
-//   document.querySelector('#displayEquation').innerText = firstKey
-// }
-
-// function getDecimal() {
-//   let firstKey = '.'
-//   document.querySelector('#displayEquation').innerText = firstKey
-// }
 
 
 
 
-// let display = document.querySelector('#displayEquation').innerText.value
 
+// let keys = document.querySelector('#container2')
+// let displayEqua = document.querySelector('#displayEquation')
+// let display1 = document.querySelector('h2')
+// let arithmetic = document.querySelector('#arithmeticSec')
 
-// document.querySelector('.key').addEventListener('click', getDisplay)
+// keys.addEventListener('click', event => {
+//   if(!event.target.closest('div')) return
+  
+//   const key = event.target
+//   const keyValue = key.textContent
+//   const displayValue = displayEqua.textContent
 
-// function getDisplay() {
-//   let keyEntry = document.querySelector('.key').innerText.value
+//   if (displayValue == '0') {
+//     displayEqua.textContent = keyValue
+//   } else {
+//     displayEqua.textContent = displayValue + keyValue
+//   }
 
-//   document.querySelector('#displayEquation').innerText = keyEntry
-//   console.log(keyEntry)
-// }
-
-// if (keyEntry >= 0) {
-//   keyEntry2 = keyEntry + "";
-// } else {
-
-// }
+//   if (type == 'a')
+// })
