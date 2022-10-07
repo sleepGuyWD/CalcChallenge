@@ -1,7 +1,6 @@
 const prevDisplayTextElement = document.querySelector('#output')
 const currrentDisplayTextElement = document.querySelector('#displayEquation')
 
-
 class Calculator  {
   constructor(prevDisplayTextElement, currrentDisplayTextElement) {
     this.prevDisplayTextElement = prevDisplayTextElement
@@ -81,33 +80,3 @@ const keys = document.querySelector('#container2')
       calculator.updateDisplay()
     }
   })
-
-
-
-
-
-
-
-
-
-
-// let keys = document.querySelector('#container2')
-// let displayEqua = document.querySelector('#displayEquation')
-// let display1 = document.querySelector('h2')
-// let arithmetic = document.querySelector('#arithmeticSec')
-
-// keys.addEventListener('click', event => {
-//   if(!event.target.closest('div')) return
-  
-//   const key = event.target
-//   const keyValue = key.textContent
-//   const displayValue = displayEqua.textContent
-
-//   if (displayValue == '0') {
-//     displayEqua.textContent = keyValue
-//   } else {
-//     displayEqua.textContent = displayValue + keyValue
-//   }
-
-//   if (type == 'a')
-// })

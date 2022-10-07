@@ -1,19 +1,18 @@
-
-
 html {
   background-color: lightslategrey;
   font-family: 'Roboto';
   font-size: 35px;
   text-align: center;
-  
 }
+
 body {
   width: 90%;
   display: flex;
   flex-direction: column;
-  
 }
-#numberSelection, #arithmetic {
+
+#numberSelection, 
+#arithmetic {
   font-size: 1.0rem;
 }
 
@@ -29,15 +28,12 @@ body {
   box-shadow: 2px 3px 25px 0
             rgba(0, 0, 0, .25);          
   box-shadow: -1px  0px 5px rgba(0, 0, 0, 0.432);           
- 
- 
- 
 }
 
-#output, #displayEntry{
+#output, 
+#displayEntry {
   border-bottom: 1px solid rgba(255, 255, 255, 0.356);
   width: 100%;
- 
 }
 
 #container2 {
@@ -48,7 +44,6 @@ body {
   height: 350px;
 }
 
-
 #output {
   font-size: 1.5rem;
   height: 100%;
@@ -58,6 +53,7 @@ body {
   margin: 0;
   overflow: hidden;
 }
+
 #output {
   height: 60px;
   margin-right: 5px;
@@ -77,6 +73,7 @@ body {
   padding-right: 10px;
   margin: 0;
 }
+
 #numberSelection {
   display: flex;
   width: 70%;
@@ -94,7 +91,6 @@ body {
   height: 23%;
   width: 100%;
   justify-content: space-between;
-  
 }
 
 .key{
@@ -144,11 +140,7 @@ body {
   width: 30%;
   height: 100%;
   display: flex;
-
-
   flex-direction: column;
-
-
   justify-content: space-between;
 }
 
@@ -160,7 +152,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-
 
 .key.op {
   height: 52.7px;
@@ -176,8 +167,6 @@ body {
   background-color: rgba(247, 250, 207, 0.24);
   box-shadow: -1px  0px 2px rgba(0, 0, 0, 0.432);
 }
-
-
 
 @media only screen and (max-width: 600px) {
   #mainContainer {
